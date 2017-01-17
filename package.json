@@ -7,7 +7,8 @@
   "scripts": {
     "test": "./node_modules/.bin/electron-mocha --renderer && ./node_modules/.bin/cucumber-electron",
     "browserify": "browserify ./lib/bbc/a11y/js/a11y.js -o ./lib/bbc/a11y/js/bundle.js",
-    "watchify": "watchify ./lib/bbc/a11y/js/a11y.js -o ./lib/bbc/a11y/js/bundle.js"
+    "watchify": "watchify ./lib/bbc/a11y/js/a11y.js -o ./lib/bbc/a11y/js/bundle.js",
+    "standards-json": "node -e \"console.log(require('./lib/bbc/a11y/js/standards').json())\""
   },
   "bin": {
     "bbc-a11y": "./bin/bbc-a11y.js"

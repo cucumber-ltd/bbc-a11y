@@ -12,6 +12,11 @@ project today.
 
 The [using guide](USING.md) shows how to use a11y in your project.
 
+## Hosting an Accessibility Metrics Dashboard
+
+The [hosting guide](HOSTING.md) includes an example of deploying an interactive
+dashboard web app for tracking accessibility metrics over time.
+
 ## Contributing to BBC A11y
 
 We welcome contributions of ideas and code! Please refer to the
