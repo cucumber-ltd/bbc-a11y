@@ -1,15 +1,21 @@
-Feature: Managing focus
+Feature: Changing focus
 
   Focus or context must not automatically change during user input.
 
-  It can be disorienting and hinder users from verifying information or
-  correcting mistakes if the focus automatically changes when the user is not
-  expecting it. For example, moving to the next control or to a validation error
-  message during input.
+  Content that updates on input can be confusing, especially to users 
+  of screen readers and screen magnification software, and people with 
+  cognitive impairment.
 
-  Focus must only change when activated by the user. This could be via mouse or
-  touch, using 'tab' or 'flicking' to change form control, or using 'space' or
-  'enter' to activate a button.
+  In forms it can be disorienting and hinder users from verifying 
+  information or correcting mistakes if the focus automatically changes 
+  when the user is not expecting it. For example, moving to the next 
+  control or to a validation error message during input.
+
+  Focus must only change when activated by the user. This could be via 
+  mouse or touch, using ‘tab’ or ‘flicking’ to change form control, or 
+  using ‘space’ or ‘enter’ to activate a button.
+
+  This guideline is particularly important when creating forms.
 
   HTML Applicability
   ==================
@@ -32,7 +38,7 @@ Feature: Managing focus
         <input type="submit" value="Search">
       </form>
       """
-    When I test the "Forms: Managing focus: Forms must have submit buttons" standard
+    When I test the "Focus: Changing focus: Forms must have submit buttons" standard
     Then it passes
 
   @html @automated
@@ -45,7 +51,7 @@ Feature: Managing focus
         <input type="image" src="some.png">
       </form>
       """
-    When I test the "Forms: Managing focus: Forms must have submit buttons" standard
+    When I test the "Focus: Changing focus: Forms must have submit buttons" standard
     Then it passes
 
   @html @automated
@@ -57,7 +63,7 @@ Feature: Managing focus
         <input type="text" name="q" id="q">
       </form>
       """
-    When I test the "Forms: Managing focus: Forms must have submit buttons" standard
+    When I test the "Focus: Changing focus: Forms must have submit buttons" standard
     Then it fails with the message:
       """
       Form has no submit button: /html/body/form
@@ -73,7 +79,7 @@ Feature: Managing focus
         <button type="submit">Search</button>
       </form>
       """
-    When I test the "Forms: Managing focus: Forms must have submit buttons" standard
+    When I test the "Focus: Changing focus: Forms must have submit buttons" standard
     Then it passes
 
   @html @automated
@@ -85,19 +91,19 @@ Feature: Managing focus
         <input type="text" name="q" id="q">
       </form>
       """
-    When I test the "Forms: Managing focus: Forms must have submit buttons" standard
+    When I test the "Focus: Changing focus: Forms must have submit buttons" standard
     Then it passes
 
   @html @manual
   Scenario: Focus or context does not automatically change during user input (manual pass)
-    Given I am performing a manual test of the "Forms: Managing focus: Focus or context must not automatically change during user input" standard
+    Given I am performing a manual test of the "Focus: Changing focus: Focus or context must not automatically change during user input" standard
     And I have been asked "Does focus or context automatically change during user input?"
     When I answer "No (or not applicable)"
     Then the manual test passes
 
   @html @manual
   Scenario: Focus or context changes automatically during user input (manual fail)
-    Given I am performing a manual test of the "Forms: Managing focus: Focus or context must not automatically change during user input" standard
+    Given I am performing a manual test of the "Focus: Changing focus: Focus or context must not automatically change during user input" standard
     And I have been asked "Does focus or context automatically change during user input?"
     When I answer "Yes"
     Then the manual test fails
